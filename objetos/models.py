@@ -25,6 +25,14 @@ class Jogos(models.Model):
     descricao = models.CharField(max_length=1000)
 
 class Acessorios(models.Model):
+    CONSOLES_CHOICES = [
+        ('SFC', 'Super Famicom'),
+        ('WII', 'Nintendo Wii'),
+        ('PS2', 'Playstation 2'),
+        ('3DS', 'Nintendo 3DS')
+    ]
+
     nome = models.CharField(max_length=30)
     ano = models.IntegerField(default=0)
+    console = models.CharField(max_length=3, choices=CONSOLES_CHOICES)
     descricao = models.CharField(max_length=1000)  

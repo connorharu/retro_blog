@@ -5,8 +5,10 @@
 {% block content %}
     <div>
         <h2>Página placeholder pra não dar erro no cadastro</h2>
-        <a href="registrar/">voltar para o cadastro</a>
+        <a href="{% url 'registrar' %}">voltar para o cadastro</a>
         <br>
-        <a href="registrar_jogos/">voltar para o cadastro de jogos</a>
+        <a href="{% url 'registrar_jogos' %}">voltar para o cadastro de jogos</a>
+        <br>
+        <a href="{% url 'registrar_acessorios' %}">voltar para o cadastro de acessorios</a>
     </div>
 {% endblock %}
