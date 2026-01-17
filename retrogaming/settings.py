@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'sfc',
     'objetos',
     'supervisor',
+    'wii',
+    'ps2',
+    'tds',
 ]
 
 MIDDLEWARE = [

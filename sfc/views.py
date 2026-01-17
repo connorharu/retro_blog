@@ -6,3 +6,6 @@ from django.http import HttpResponse
 def index(request):
     # return HttpResponse("começo da página do super famicom")
     return render(request, 'pagina_principal.html')
+
+def sfc_main(request):
+    return render(request, 'sfc_main.html')

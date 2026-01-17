@@ -22,4 +22,7 @@ urlpatterns = [
     path('', include("sfc.urls")),
     path('registrar/', include("supervisor.urls")),
     path('objetos/', include("objetos.urls")),
+    path('', include("wii.urls")),
+    path('', include("ps2.urls")),
+    path('', include("tds.urls")),
 ]
