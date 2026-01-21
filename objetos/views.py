@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Jogos, Acessorios
 from .forms import FormularioJogos, FormularioAcessorios
+from django.contrib.auth import authenticate
 
 # Create your views here.
 
@@ -9,6 +10,8 @@ from .forms import FormularioJogos, FormularioAcessorios
 #     return HttpResponse("começo da página dos objetos")
 
 def cadastro_jogos(request):
+    if not request.user.is_authenticated:
+        return redirect('index')
     if request.method == "POST":
         form = FormularioJogos(request.POST)
         if form.is_valid():
@@ -20,6 +23,8 @@ def cadastro_jogos(request):
     return render(request, 'registrar_jogos.html', {'form': form})
 
 def cadastro_acessorios(request):
+    if not request.user.is_authenticated:
+        return redirect('index')
     if request.method == "POST":
         form = FormularioAcessorios(request.POST)
         if form.is_valid():
