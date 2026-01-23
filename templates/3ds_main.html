@@ -5,5 +5,51 @@
 {% block content %}
 
         <h2>Página placeholder 3ds</h2>
+        
+        <p>pretendo fazer um front bonito futuramente, mas durante esse estudo, foco somente no back</p>
+
+        <section>
+        <h3>Cartuchos</h3>
+        
+        {% for jogo in jogos %}
+                <details style="margin-bottom: 15px; border: 1px solid #4a4a4a; border-radius: 7px; overflow: hidden;">
+                <summary style="padding: 10px; background-color: #acf2f5;">
+                        {{ jogo.nome }}
+                </summary>
+                
+                <div style="padding: 15px; background-color: #eefdff;">
+                        <p>Tipo: {{ jogo.get_tipo_display }}</p>
+                        <p>Publisher: {{ jogo.publisher }}</p>
+                        <p>Ano: {{ jogo.ano }}</p>
+                        <p>Gênero: {{ jogo.genero }}</p>
+                        <p>Descrição: {{ jogo.descricao }}</p>
+                </div>
+                </details>
+        {% empty %}
+                <p>Nenhum jogo cadastrado</p>
+        {% endfor %}
+        </section>
+
+        <hr style="margin: 30px 0;">
+
+        <section>
+
+        <h3>Acessórios</h3>
+
+        {% for acessorio in acessorios %}
+                <details style="margin-bottom: 15px; border: 1px solid #4a4a4a; border-radius: 7px; overflow: hidden;">
+                <summary style="padding: 10px; background-color: #acf2f5;">
+                        {{ acessorio.nome }}
+                </summary>
+                
+                <div style="padding: 15px; background-color: #eefdff;">
+                        <p>Ano: {{ acessorio.ano }}</p>
+                        <p>Descrição: {{ acessorio.descricao }}</p>
+                </div>
+                </details>
+        {% empty %}
+                <p>Nenhum acessório cadastrado</p>
+        {% endfor %}
+        </section>
 
 {% endblock %}

@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Jogos, Acessorios
 from .forms import FormularioJogos, FormularioAcessorios
-from django.contrib.auth import authenticate
+from django.db import models
 
 # Create your views here.
 
@@ -34,3 +34,23 @@ def cadastro_acessorios(request):
         form = FormularioAcessorios()
     
     return render(request, 'registrar_acessorios.html', {'form': form})
+
+def get_jogos(console):
+    if console == 'SFC':
+        return Jogos.objects.filter(console='SFC')
+    if console == 'WII':
+        return Jogos.objects.filter(console='WII')
+    if console == 'PS2':
+        return Jogos.objects.filter(console='PS2')
+    if console == '3DS':
+        return Jogos.objects.filter(console='3DS')
+
+def get_acessorios(console):
+    if console == 'SFC':
+        return Acessorios.objects.filter(console='SFC')
+    if console == 'WII':
+        return Acessorios.objects.filter(console='WII')
+    if console == 'PS2':
+        return Acessorios.objects.filter(console='PS2')
+    if console == '3DS':
+        return Acessorios.objects.filter(console='3DS')

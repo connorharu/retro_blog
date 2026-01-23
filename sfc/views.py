@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from objetos.views import get_jogos, get_acessorios
 
 # Create your views here.
 
 def index(request):
-    # return HttpResponse("começo da página do super famicom")
     return render(request, 'pagina_principal.html')
 
 def sfc_main(request):
-    return render(request, 'sfc_main.html')
+    jogos = get_jogos('SFC')
+    acessorios = get_acessorios('SFC')
+    return render(request, 'sfc_main.html', {'jogos':jogos, 'acessorios':acessorios})
