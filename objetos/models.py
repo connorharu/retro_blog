@@ -21,8 +21,9 @@ class Jogos(models.Model):
     nome = models.CharField(max_length=30)
     publisher = models.CharField(max_length=30)
     ano = models.IntegerField(default=0)
-    genero = models.CharField(max_length=30) # to-do: verificar generos e fazer listagem
+    genero = models.CharField(max_length=30)
     descricao = models.CharField(max_length=1000)
+    imagem = models.ImageField(upload_to='images/')
 
 class Acessorios(models.Model):
     CONSOLES_CHOICES = [
@@ -35,4 +36,5 @@ class Acessorios(models.Model):
     nome = models.CharField(max_length=30)
     ano = models.IntegerField(default=0)
     console = models.CharField(max_length=3, choices=CONSOLES_CHOICES)
-    descricao = models.CharField(max_length=1000)  
+    descricao = models.CharField(max_length=1000)
+    imagem = models.ImageField(upload_to='images/')  

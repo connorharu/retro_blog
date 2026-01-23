@@ -13,7 +13,7 @@ def cadastro_jogos(request):
     if not request.user.is_authenticated:
         return redirect('index')
     if request.method == "POST":
-        form = FormularioJogos(request.POST)
+        form = FormularioJogos(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('index')
@@ -26,7 +26,7 @@ def cadastro_acessorios(request):
     if not request.user.is_authenticated:
         return redirect('index')
     if request.method == "POST":
-        form = FormularioAcessorios(request.POST)
+        form = FormularioAcessorios(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('index')

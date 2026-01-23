@@ -23,6 +23,8 @@
                         <p>Ano: {{ jogo.ano }}</p>
                         <p>Gênero: {{ jogo.genero }}</p>
                         <p>Descrição: {{ jogo.descricao }}</p>
+                        <p>Imagem:</p>
+                        <img src="{{ jogo.imagem.url }}" style="max-width: 300px;">
                 </div>
                 </details>
         {% empty %}
@@ -45,6 +47,8 @@
                 <div style="padding: 15px; background-color: #eefdff;">
                         <p>Ano: {{ acessorio.ano }}</p>
                         <p>Descrição: {{ acessorio.descricao }}</p>
+                        <p>Imagem:</p>
+                        <img src="{{ acessorio.imagem.url }}" style="max-width: 300px;">
                 </div>
                 </details>
         {% empty %}
